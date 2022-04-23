@@ -59,7 +59,7 @@
 
 
     <color name="colorAccent1">@color/utl_colorPrimary</color>
-    <color name="colorAccent0">@color/utl_colorPrimaryMid</color>
+    <color name="colorAccent0">@color/utl_colorPrimary</color>
     <color name="colorAccent2">@color/utl_colorPrimaryDark</color>
 
     <color name="feildtext">#ffffff</color>

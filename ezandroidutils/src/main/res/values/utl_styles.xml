@@ -128,12 +128,12 @@
     </style>
 
     <style name="MyAlertDialogStyleCircular" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="android:statusBarColor">@color/colorBackgroundDark</item>
+        <item name="android:statusBarColor">@color/utl_colorBackgroundDark</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="android:windowNoTitle">true</item>
         <item name="colorAccent">@color/utl_colorAccent</item>
         <item name="android:windowIsFloating">false</item>
-        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="android:windowBackground">@color/utl_colorBackground</item>
     </style>
 
     <style name="BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">

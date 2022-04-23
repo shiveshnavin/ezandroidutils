@@ -61,8 +61,8 @@
             android:gravity="center"
             android:padding="5dp"
             android:text="@string/app_name"
-            android:textColor="@color/colorTextPrimary"
-            android:textSize="@dimen/text_head" />
+            android:textColor="@color/utl_colorTextPrimary"
+            android:textSize="@dimen/utl_text_head" />
 
 
 

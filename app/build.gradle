@@ -6,7 +6,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.semibit.ezandroidutils"
+        applicationId "com.semibit.sampleapp"
         minSdk 21
         targetSdk 31
         versionCode 1
@@ -32,7 +32,7 @@ dependencies {
 
     annotationProcessor 'org.projectlombok:lombok:1.18.18'
     implementation 'org.projectlombok:lombok:1.18.18'
-
+    implementation 'com.github.shiveshnavin:ezandroidutils:1.0.0'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
