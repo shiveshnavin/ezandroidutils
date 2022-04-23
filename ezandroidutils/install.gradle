@@ -1,0 +1,41 @@
+plugins {
+    id 'com.github.dcendents.android-maven'
+}
+
+group = 'com.semibit.ezandroidutils'
+
+install {
+    repositories.mavenInstaller {
+        pom {
+            project {
+                packaging 'aar'
+                groupId 'com.semibit.ezandroidutils'
+                artifactId 'ezandroidutils'
+                name 'androidlibrary'
+                description 'An android library with all the basic bells and whistles for bootstrapping any app.'
+                url 'https://github.com/shiveshnavin/ezandroidutils'
+
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'shiveshnavin'
+                        name 'Shivesh Navin'
+                        email 'shiveshnavin@gmail.com'
+                    }
+                }
+
+                scm {
+                    connection 'https://github.com/shiveshnavin/ezandroidutils.git'
+                    developerConnection 'https://github.com/shiveshnavin/ezandroidutils.git'
+                    url 'https://github.com/shiveshnavin/ezandroidutils'
+                }
+            }
+        }
+    }
+}
