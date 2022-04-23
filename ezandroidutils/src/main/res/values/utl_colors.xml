@@ -548,8 +548,6 @@
 
 
 
-    <color name="hint_foreground_material_dark">@color/bright_foreground_disabled_material_dark</color>
-    <color name="hint_foreground_material_light">@color/bright_foreground_disabled_material_light</color>
 
     <!-- Text & foreground colors -->
     <eat-comment />

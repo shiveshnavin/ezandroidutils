@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "415763751341",
+    "project_id": "stocksmatesrv",
+    "storage_bucket": "stocksmatesrv.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415763751341:android:8474c08050806535b28124",
+        "android_client_info": {
+          "package_name": "com.semibit.sampleapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "415763751341-80kreltf5p9druejdn0o1o53i0d8ci5b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1uy5HCeKkqItlQ6NeMSUQx0jrF8lShis"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "415763751341-80kreltf5p9druejdn0o1o53i0d8ci5b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
