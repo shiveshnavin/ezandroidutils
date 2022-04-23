@@ -10,3 +10,4 @@ dependencyResolutionManagement {
 rootProject.name = "EzAndroidUtils"
 include ':ezandroidutils'
 include ':app'
+
