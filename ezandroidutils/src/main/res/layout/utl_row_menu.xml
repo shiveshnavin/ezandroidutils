@@ -30,8 +30,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/font_text"
             android:text="Referral Earnings : "
-            android:textColor="@color/colorTextPrimary"
-            android:textSize="@dimen/text_head"
+            android:textColor="@color/utl_colorTextPrimary"
+            android:textSize="@dimen/utl_text_head"
             />
 
         <TextView
@@ -39,7 +39,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/font_text"
-            android:text="@string/help_withdraw"
             android:textColor="@color/offwhite"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toRightOf="@+id/img"
@@ -48,14 +47,13 @@
 
     </LinearLayout>
 
-    < com.semibit.ezandroidutils.views.RoundRectCornerImageView
+    <com.semibit.ezandroidutils.views.RoundRectCornerImageView
         android:id="@+id/img"
         android:layout_width="44dp"
         android:layout_height="44dp"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:padding="@dimen/rounded_icon_radius"
-        android:src="@drawable/referral_bal"
+        android:padding="@dimen/utl_rounded_icon_radius"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -29,7 +29,6 @@ import  com.semibit.ezandroidutils.Constants;
 import  com.semibit.ezandroidutils.R;
 import  com.semibit.ezandroidutils.interfaces.GenricObjectCallback;
 import  com.semibit.ezandroidutils.services.CrashReporter;
-import  com.semibit.ezandroidutils.services.RestAPI;
 import  com.semibit.ezandroidutils.ui.BaseActivity;
 import  com.semibit.ezandroidutils.EzUtils;
 
@@ -73,6 +72,11 @@ public class WebViewActivity extends BaseActivity {
             loadStart();
         else
             loadStop();
+    }
+
+    @Override
+    public void checkUpdate() {
+
     }
 
     @Override
@@ -347,105 +351,6 @@ public class WebViewActivity extends BaseActivity {
         }
     }
 
-    public void startCheck() {
-
-        if (orderId != null) {
-
-            TimerTask timerTask = new TimerTask() {
-                @Override
-                public void run() {
-
-                    if (!isProcessing) {
-                        isProcessing = true;
-                        restApi.checkTransaction(orderId, new GenricObjectCallback<JSONObject>() {
-                            @Override
-                            public void onEntity(JSONObject data) {
-//                                EzUtils.toast(ctx, data.toString());
-                                isProcessing = false;
-                                String status = data.optString("status");
-                                if (status.equals(Constants.TXN_SUCCESS) || status.equals("paid")) {
-                                    completed = true;
-                                    clearTimer();
-                                    Intent it = new Intent();
-                                    it.putExtra("data", data.toString());
-                                    it.putExtra("amount",data.optString("amount"));
-                                    it.putExtra("id",data.optString("id"));
-                                    String timeStamp = data.optString("timeStamp");
-                                    if(Strings.isNullOrEmpty(timeStamp)){
-                                        timeStamp = data.optString("created_at");
-                                    }
-                                    if(Strings.isNullOrEmpty(timeStamp)){
-                                        timeStamp = data.optString("time");
-                                    }
-                                    it.putExtra("timeStamp",timeStamp);
-                                    setResult(Activity.RESULT_OK, it);
-                                    RestAPI.getInstance().invalidateCacheWalletAndTxns();
-                                    WalletViewModel.getInstance().refresh(null);
-                                    new Handler(Looper.getMainLooper())
-                                            .postDelayed(()->{
-                                                    WalletViewModel.getInstance().refresh(null);
-                                            },5000);
-                                    finish();
-                                    AnalyticsReporter.getInstance().logPurchase(data.optLong("amount"),data.optString("id"));
-
-                                } else if (status.equals(Constants.TXN_FAILURE)) {
-                                    String reason = "";
-                                    try {
-                                        JSONObject extra = new JSONObject(data.optString("extra"));
-                                        reason = extra.optString("RESPMSG");
-                                    } catch (Exception e) {
-                                    }
-                                    showError(getString(R.string.txn_failed) + "\n\n" + reason);
-                                }
-                                else if (!status.equals(Constants.TXN_INITIATED)){
-                                    completed = true;
-                                    clearTimer();
-                                    Intent it = new Intent();
-                                    it.putExtra("data", data.toString());
-                                    it.putExtra("amount",data.optString("amount"));
-                                    it.putExtra("id",data.optString("id"));
-                                    String timeStamp = data.optString("timeStamp");
-                                    if(Strings.isNullOrEmpty(timeStamp)){
-                                        timeStamp = data.optString("created_at");
-                                    }
-                                    if(Strings.isNullOrEmpty(timeStamp)){
-                                        timeStamp = data.optString("time");
-                                    }
-
-
-                                    it.putExtra("timeStamp",timeStamp);
-                                    setResult(Activity.RESULT_FIRST_USER, it);
-                                    RestAPI.getInstance().invalidateCacheWalletAndTxns();
-                                    WalletViewModel.getInstance().refresh(null);
-                                    new Handler(Looper.getMainLooper())
-                                            .postDelayed(()->{
-                                                WalletViewModel.getInstance().refresh(null);
-                                            },3000);
-                                    finish();
-                                    AnalyticsReporter.getInstance().logPurchase(data.optLong("amount"),data.optString("id"));
-
-                                }
-
-                            }
-
-                            @Override
-                            public void onError(String message) {
-                                isProcessing = false;
-                                showError(message != null ? message : "");
-                            }
-                        });
-
-                    }
-                }
-            };
-            findViewById(R.id.cont_load_block).setVisibility(View.VISIBLE);
-            ImageView animLogo = (ImageView) findViewById(R.id.animLogo);
-            EzUtils.animate_avd(animLogo);
-            timer.scheduleAtFixedRate(timerTask, 0, 1000);
-
-        }
-    }
-
     public void showError(String message) {
         completed = true;
         clearTimer();
@@ -461,4 +366,17 @@ public class WebViewActivity extends BaseActivity {
         clearTimer();
         super.onDestroy();
     }
+
+    @Override
+    public void startLogout() {
+
+    }
+
+    @Override
+    public void startHome(Intent intent) {
+
+    }
+
+    public void startCheck(){}
+
 }

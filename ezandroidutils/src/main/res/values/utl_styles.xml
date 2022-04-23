@@ -1,12 +1,20 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
+
+
+    <style name="DarkGreen" >
+        <item name="colorPrimary">@color/material_green_700</item>
+        <item name="colorAccent">@color/material_green_700</item>
+
+    </style>
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/utl_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/utl_colorPrimaryDark</item>
+        <item name="colorAccent">@color/utl_colorAccent</item>
         <item name="android:windowContentTransitions">true</item>
-        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:statusBarColor">@color/utl_colorPrimaryDark</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="android:windowNoTitle">true</item>
     </style>
@@ -20,7 +28,7 @@
     <style name="MyWebView" parent="@android:style/Theme.Dialog">
         <item name="android:textColor">@color/white</item>
         <item name="android:windowFrame">@null</item>
-        <item name="android:windowBackground">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/utl_colorAccent</item>
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
     </style>
 
@@ -114,7 +122,7 @@
         <item name="android:clickable">true</item>
     </style>
     <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/utl_colorAccent</item>
         <item name="android:textColorPrimary">@color/colorTextFade</item>
         <item name="android:background">@color/colorTextBright</item>
     </style>
@@ -123,7 +131,7 @@
         <item name="android:statusBarColor">@color/colorBackgroundDark</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="android:windowNoTitle">true</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/utl_colorAccent</item>
         <item name="android:windowIsFloating">false</item>
         <item name="android:windowBackground">@color/colorBackground</item>
     </style>

@@ -4,11 +4,15 @@
     <color name="utl_colorPrimary">#09c6df</color>
     <color name="utl_colorPrimaryDark">#000000</color>
     <color name="utl_colorAccent">#ff8a65</color>
-    <color name="utl_colorTextPrimary">@color/primary_dark</color>
+    <color name="utl_colorTextPrimary">#DDDBDB</color>
+    <color name="utl_colorTextSecondary">#9F9D9D</color>
     <color name="utl_colorTextSuccessDark">#20d2bb</color>
     <color name="utl_colorTextError">#f64c73</color>
     <color name="utl_colorBackground">@color/transblack</color>
 
+    <color name="utl_colorIcon">#DDDBDB</color>
+    <color name="utl_colorIconSecondary">#6AFFFFFF</color>
+    <color name="utl_colorBackgroundDark">#1B1025</color>
     <color name="utl_hint">#607d8b</color>
     <color name="utl_highlight">#BFFFFFFF</color>
     <color name="utl_viewBg">#f1f5f8</color>
@@ -16,6 +20,17 @@
     <color name="utl_button_text_color">#fff</color>
     <color name="utl_home_bg">#fff</color>
 
+    <color name="utl_colorBackgroundLight">#2D1C3C</color>
+    <color name="utl_colorBackgroundLighter">#422959</color>
+
+    <color name="utl_colorAccentHighLighted">@color/material_red_500</color>
+    <color name="utl_colorTextSuccess">@color/material_green_300</color>
+    <color name="utl_colorTextWarning">@color/material_yellow_500</color>
+    <color name="utl_colorGoldenWin">#FFD700</color>
+    <color name="dotpotblue">@color/material_teal_700</color>
+
+    <color name="inputBackground">#27FFFFFF</color>
+    <color name="inputBackgroundFocused">#40FFFFFF</color>
 
     <color name="colorTextFade">@color/material_greyy_300</color>
     <color name="colorTextBright">#fff</color>
@@ -44,7 +59,7 @@
 
 
     <color name="colorAccent1">@color/utl_colorPrimary</color>
-    <color name="colorAccent0">@color/colorPrimaryMid</color>
+    <color name="colorAccent0">@color/utl_colorPrimaryMid</color>
     <color name="colorAccent2">@color/utl_colorPrimaryDark</color>
 
     <color name="feildtext">#ffffff</color>

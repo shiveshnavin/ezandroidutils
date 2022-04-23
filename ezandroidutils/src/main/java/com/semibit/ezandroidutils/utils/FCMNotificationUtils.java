@@ -29,6 +29,7 @@ public class FCMNotificationUtils {
     SoundPool soundPool;
     private String channelId;
     private Context ctx;
+    public static int Rcolorutl_colorAccent = R.color.utl_colorAccent;
 
     public FCMNotificationUtils(Context context) {
         ctx = context;
@@ -122,7 +123,7 @@ public class FCMNotificationUtils {
                 .setAutoCancel(true)
                 .setStyle(new NotificationCompat.BigTextStyle()
                         .bigText(body))
-                .setColor(ResourceUtils.getColor(R.color.colorAccent));
+                .setColor(ResourceUtils.getColor(Rcolorutl_colorAccent));
 
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
         stackBuilder.addNextIntent(intent);

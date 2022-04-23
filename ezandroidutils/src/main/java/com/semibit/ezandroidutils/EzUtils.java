@@ -86,6 +86,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import  com.semibit.ezandroidutils.adapters.GenriXAdapter;
 import  com.semibit.ezandroidutils.binding.GenericUserViewModel;
@@ -97,7 +98,7 @@ import  com.semibit.ezandroidutils.services.CacheService;
 import  com.semibit.ezandroidutils.services.CrashReporter;
 import  com.semibit.ezandroidutils.services.DBService;
 import  com.semibit.ezandroidutils.ui.BaseActivity;
-import  com.semibit.ezandroidutils.ui.activities.SplashActivity;
+import com.semibit.ezandroidutils.ui.activities.SplashActivity;
 import  com.semibit.ezandroidutils.utils.FadePopup;
 import  com.semibit.ezandroidutils.utils.ResourceUtils;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -158,6 +159,17 @@ public class EzUtils {
     public static EditText input;
     public static SharedPreferences.Editor editor;// = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
     public static Dialog dialog;
+    public static int Rlayoututl_diag_success_dark = R.layout.utl_diag_success_dark;
+    public static int Rlayoututl_diag_image_text = R.layout.utl_diag_image_text;
+    public static int Rlayoututl_diag_bottom = R.layout.utl_diag_bottom;
+    public static int Rlayoututl_diag_bottom_list = R.layout.utl_diag_bottom_list ;
+    public static int Rlayoututl_row_menu = R.layout.utl_row_menu;
+    public static int Rlayoututl_diag_success = R.layout.utl_diag_success;
+    public static int Rdrawableloading_bg=R.drawable.loading_bg;
+    public static int Rdrawableic_add_attachment=R.drawable.ic_add_attachment;
+    public static int Rdrawableic_cancel_white=R.drawable.ic_cancel_white;
+    public static int Rdrawableutl_logo_inv=R.drawable.utl_logo_inv;
+    public static int Rdrawableic_notifications_black_48dp=R.drawable.ic_notifications_black_48dp;
 
     public static void init(Context ctxx) {
 
@@ -1194,7 +1206,7 @@ public class EzUtils {
 
         mBottomSheetDialog = new BottomSheetDialog(ctx,R.style.BottomSheetDialog);
         LayoutInflater inf = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rootView = inf.inflate(R.layout.utl_diag_image_text, null);
+        View rootView = inf.inflate(Rlayoututl_diag_image_text, null);
 
 
         LinearLayout contImage;
@@ -1255,16 +1267,16 @@ public class EzUtils {
 
                 if (imgUrl != null && imgUrl.length() > 4) {
                     if (imgUrl.startsWith("http"))
-                        Picasso.get().load(imgUrl).placeholder(R.drawable.loading_bg)
+                        Picasso.get().load(imgUrl).placeholder(Rdrawableloading_bg)
                                 .into(subImage);
                     else {
 
                         File f = new File(imgUrl);
-                        Picasso.get().load(f).placeholder(R.drawable.loading_bg)
+                        Picasso.get().load(f).placeholder(Rdrawableloading_bg)
                                 .into(subImage);
                     }
                 } else {
-                    Picasso.get().load(imageRes).placeholder(R.drawable.ic_add_attachment)
+                    Picasso.get().load(imageRes).placeholder(Rdrawableic_add_attachment)
                             .into(subImage);
                 }
 
@@ -1328,7 +1340,7 @@ public class EzUtils {
         try {
             mBottomSheetDialog = new BottomSheetDialog(ctx,R.style.BottomSheetDialog);
             LayoutInflater inf = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View sheetView = inf.inflate(R.layout.utl_diag_bottom, null);
+            View sheetView = inf.inflate(Rlayoututl_diag_bottom, null);
             sheetView.setBackgroundColor(ResourceUtils.getColor(R.color.transparent));
             final TextView textT = (TextView) sheetView.findViewById(R.id.text);
             final TextView titleT = (TextView) sheetView.findViewById(R.id.title);
@@ -1377,7 +1389,7 @@ public class EzUtils {
 
         mBottomSheetDialog = new BottomSheetDialog(ctx,R.style.BottomSheetDialog);
         LayoutInflater inf = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View sheetView = inf.inflate(R.layout.utl_diag_bottom_list, null);
+        View sheetView = inf.inflate(Rlayoututl_diag_bottom_list, null);
 
         final RecyclerView list = (RecyclerView) sheetView.findViewById(R.id.list);
         final TextView titleT = (TextView) sheetView.findViewById(R.id.title);
@@ -1437,14 +1449,14 @@ public class EzUtils {
 
         mBottomSheetDialog = new BottomSheetDialog(ctx);
         LayoutInflater inf = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View sheetView = inf.inflate(R.layout.utl_diag_bottom_list, null);
+        View sheetView = inf.inflate(Rlayoututl_diag_bottom_list, null);
 
         final RecyclerView list = (RecyclerView) sheetView.findViewById(R.id.list);
         final TextView titleT = (TextView) sheetView.findViewById(R.id.title);
 
 
         ArrayList<String> items = new ArrayList<>(Arrays.asList(menus));
-        GenriXAdapter<String> adapter = new GenriXAdapter<String>(ctx, R.layout.utl_row_menu, items) {
+        GenriXAdapter<String> adapter = new GenriXAdapter<String>(ctx, Rlayoututl_row_menu, items) {
             @Override
             public void onBindViewHolder(@NonNull GenriXAdapter.CustomViewHolder viewHolder, int i) {
 
@@ -1508,7 +1520,7 @@ public class EzUtils {
 
         mBottomSheetDialog = new BottomSheetDialog(ctx);
         LayoutInflater inf = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View sheetView = inf.inflate(R.layout.utl_diag_bottom_list, null);
+        View sheetView = inf.inflate(Rlayoututl_diag_bottom_list, null);
 
         final RecyclerView list = (RecyclerView) sheetView.findViewById(R.id.list);
         final TextView titleT = (TextView) sheetView.findViewById(R.id.title);
@@ -1559,7 +1571,7 @@ public class EzUtils {
                                   final ClickCallBack click,int level) {
 
         try {
-            final View dialogView = View.inflate(anchor.getContext(), R.layout.utl_diag_success, null);
+            final View dialogView = View.inflate(anchor.getContext(), Rlayoututl_diag_success, null);
 
             final Dialog dialog = new Dialog(anchor.getContext(),R.style.PopupDialog);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -1634,7 +1646,7 @@ public class EzUtils {
     public static Dialog diagInfo2(Context ctx, String text, String actionText, boolean cancellable, final ClickCallBack click) {
 
         try {
-            final View dialogView = View.inflate(ctx, R.layout.utl_diag_success_dark, null);
+            final View dialogView = View.inflate(ctx, Rlayoututl_diag_success_dark, null);
             FadePopup popup = new FadePopup(ctx, null, dialogView);
 
             Dialog d = popup.popup();
@@ -1644,7 +1656,7 @@ public class EzUtils {
             Button done = dialogView.findViewById(R.id.done);
             ImageView img = dialogView.findViewById(R.id.img);
             ImageView cancle = d.findViewById(R.id.cancle);
-            popup.cancle.setImageResource(R.drawable.ic_cancel_white);
+            popup.cancle.setImageResource(Rdrawableic_cancel_white);
 
             if (!cancellable) {
 
@@ -1659,7 +1671,7 @@ public class EzUtils {
 */
 
 
-            img.setImageDrawable(ctx.getDrawable(getImageOrDefault(ctx,"logo_inv",R.drawable.utl_logo_inv)));
+            img.setImageDrawable(ctx.getDrawable(getImageOrDefault(ctx,"logo_inv",Rdrawableutl_logo_inv)));
 
       /*  RelativeLayout.LayoutParams params=new RelativeLayout.LayoutParams(dialogView.getWidth(),dialogView.getWidth());
         img.setLayoutParams(params);
@@ -1690,7 +1702,7 @@ public class EzUtils {
     public static Dialog diagInfo2(Context ctx, String text, String actionText, int drawableIcon, final ClickCallBack click) {
 
         try {
-            final View dialogView = View.inflate(ctx, R.layout.utl_diag_success_dark, null);
+            final View dialogView = View.inflate(ctx, Rlayoututl_diag_success_dark, null);
             FadePopup popup = new FadePopup(ctx, null, dialogView);
 
             Dialog d = popup.popup();
@@ -1700,7 +1712,7 @@ public class EzUtils {
             Button done = dialogView.findViewById(R.id.done);
             ImageView img = dialogView.findViewById(R.id.img);
             ImageView cancle = d.findViewById(R.id.cancle);
-            popup.cancle.setImageResource(R.drawable.ic_cancel_white);
+            popup.cancle.setImageResource(Rdrawableic_cancel_white);
 /*
 
         cancle.setColorFilter(ContextCompat.getColor(cancle.getContext(), R.color.white),
@@ -2065,6 +2077,13 @@ public class EzUtils {
         }
     }
 
+
+    public static FirebaseUser getUser() {
+
+        return FirebaseAuth.getInstance().getCurrentUser();
+
+    }
+
     boolean isValidMail(String email) {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
@@ -2143,7 +2162,7 @@ public class EzUtils {
         public String message;
         public String type;
         public Long time;
-        public int icon = R.drawable.ic_notifications_black_48dp;
+        public int icon = Rdrawableic_notifications_black_48dp;
         public String className;
         public HashMap<String, String> extras;
 

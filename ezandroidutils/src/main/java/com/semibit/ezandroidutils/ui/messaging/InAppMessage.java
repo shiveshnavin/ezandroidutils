@@ -4,10 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 
 import  com.semibit.ezandroidutils.Constants;
-import  com.semibit.ezandroidutils.ui.activities.SplashActivity;
 import  com.semibit.ezandroidutils.EzUtils;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.gson.Gson;
+import com.semibit.ezandroidutils.ui.activities.SplashActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -218,7 +218,7 @@ public class InAppMessage {
 
 
     public Intent getIntent(Context ctx){
-        Intent it = new Intent(ctx,SplashActivity.class);
+        Intent it = new Intent(ctx, SplashActivity.class);
         it.putExtra("message", EzUtils.js.toJson(this));
         String type = getQuotedTextId();
         if(type != null && (type.equals(EzUtils.NotificationMessage.TYPE_MESSAGE) || type.equals(EzUtils.NotificationMessage.TYPE_WALLETWITHDRAWL))){

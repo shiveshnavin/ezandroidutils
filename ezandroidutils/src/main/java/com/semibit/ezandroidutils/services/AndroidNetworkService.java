@@ -16,7 +16,7 @@ import com.androidnetworking.interfaces.UploadProgressListener;
 import com.google.common.base.Strings;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import  com.semibit.ezandroidutils.BuildConfig;
+import com.semibit.ezandroidutils.App;
 import  com.semibit.ezandroidutils.Constants;
 import  com.semibit.ezandroidutils.R;
 import  com.semibit.ezandroidutils.binding.GenericUserViewModel;
@@ -36,6 +36,7 @@ import java.io.File;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import com.semibit.ezandroidutils.BuildConfig;
 
 
 public class AndroidNetworkService implements NetworkService {
@@ -47,19 +48,19 @@ public class AndroidNetworkService implements NetworkService {
     GenricUser user;
     static String firebaseAuthToken = "";
     static String providerToken = "";
-    String appVersionCode = "" + BuildConfig.VERSION_CODE;
+    String appVersionCode = "" + App.VERSION_CODE;
     CacheUtil cacheUtil;
     String authHeader = null;
 
-    private static AndroidNetworkService instance;
+    public static AndroidNetworkService instance;
     public static NetworkService getInstance(Context applicationContext) {
         if(instance == null){
             instance = new AndroidNetworkService(applicationContext);
         }
         return instance;
     }
-    
-    private AndroidNetworkService(Context act) {
+
+    public AndroidNetworkService(Context act) {
         this.act = act;
         this.accessToken = EzUtils.requireNotNull(BaseActivity.accessToken);
         GenericUserViewModel.getInstance().getUser().observeForever(new Observer<GenricUser>() {
@@ -70,7 +71,7 @@ public class AndroidNetworkService implements NetworkService {
         });
         cacheUtil = CacheService.getInstance();
         try {
-            appVersionCode = "" + BuildConfig.VERSION_CODE;
+            appVersionCode = "" + App.VERSION_CODE;
             firebaseAuthToken = BaseActivity.getFirebaseToken(true);
             if (EzUtils.DEBUG_ENABLED) {
                 EzUtils.e("Network", " Firebase token " + firebaseAuthToken);
@@ -98,7 +99,7 @@ public class AndroidNetworkService implements NetworkService {
             Date curr = new Date(System.currentTimeMillis() + 2 * 60000);
             if (date.before(curr)) {
                 EzUtils.e("token expired in 5 mins. refreshing");
-                LoginService.refreshProviderToken((tokenNew, statusCode) -> {
+                BaseActivity.refreshProviderToken((tokenNew, statusCode) -> {
                     if (statusCode > -1) {
                         providerToken = tokenNew;
                         EzUtils.setKey(Constants.KEY_PROVIDERTOKEN, tokenNew, act);
@@ -140,7 +141,7 @@ public class AndroidNetworkService implements NetworkService {
             firebaseAuthToken = firebaseToken;
     }
 
-    private void recordUse(String url, String body) {
+    public void recordUse(String url, String body) {
         if (apiUsage == null)
             apiUsage = new HashMap<>();
         String data = url + "--";
@@ -193,7 +194,7 @@ public class AndroidNetworkService implements NetworkService {
         user = null;
     }
 
-    private Map<String, String> getAllHeaders() {
+    public Map<String, String> getAllHeaders() {
 
         HashMap<String, String> allHeaders = new HashMap<>();
 

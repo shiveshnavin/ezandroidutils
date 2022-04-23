@@ -122,7 +122,7 @@ public class MessagingAdapter extends RecyclerView.Adapter<MessagingAdapter.Cust
             vh.seen.setAlpha(0f);
         } else {
             vh.root.setGravity(Gravity.LEFT);
-                vh.sender.setTextColor(ResourceUtils.getColor(R.color.colorPrimary));
+                vh.sender.setTextColor(ResourceUtils.getColor(EzUtils.getColorOrDefault(ctx,"colorPrimary",R.color.utl_colorPrimary)));
             vh.sender.setVisibility(View.GONE);
                 vh.contAll.setBackground(ResourceUtils.getDrawable(R.drawable.messaging_rounded_grey_chat_filled));
             if (cm.getRead()==1) {
@@ -230,7 +230,7 @@ public class MessagingAdapter extends RecyclerView.Adapter<MessagingAdapter.Cust
 
                     if (Calendar.getInstance().getTimeInMillis()
                             - cm.getDateTime() > 1800000 && !user.isAdmin()) {
-                        lastDialog = EzUtils.diagInfo2(ctx, ResourceUtils.getString(R.string.del_not_possible_dialog), "Dismiss", R.drawable.ic_logo, new EzUtils.ClickCallBack() {
+                        lastDialog = EzUtils.diagInfo2(ctx, ResourceUtils.getString(R.string.del_not_possible_dialog), "Dismiss", R.drawable.utl_ic_logo, new EzUtils.ClickCallBack() {
                             @Override
                             public void done(DialogInterface dialogInterface) {
 

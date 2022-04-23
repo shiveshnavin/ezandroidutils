@@ -17,7 +17,7 @@
     <dimen name="inputWidth">270dp</dimen>
     <dimen name="inputTextSize">16sp</dimen>
     <dimen name="profilePicSize">80dp</dimen>
-
+    <dimen name="fragment_bottom_padding">5dp</dimen>
     <dimen name="drawable_size">18dp</dimen>
 
 
@@ -35,4 +35,21 @@
     <item name="zoom_in_to" format="float" type="dimen">1.10</item>
     <item name="zoom_out_to" format="float" type="dimen">0.97</item>
     <item name="zoom_to" format="float" type="dimen">1.0</item>
+
+
+    <dimen name="utl_text">14sp</dimen>
+    <dimen name="utl_text_small">12sp</dimen>
+    <dimen name="utl_text_head">18sp</dimen>
+    <dimen name="utl_text_subhead">16sp</dimen>
+    <dimen name="utl_text_xhead">24sp</dimen>
+    <dimen name="utl_text_xxhead">36sp</dimen>
+    <dimen name="utl_ico_size">24dp</dimen>
+    <dimen name="utl_ico_xsize">32dp</dimen>
+    <dimen name="utl_rounded_icon_radius">8dp</dimen>
+    <dimen name="utl_default_elevation">3dp</dimen>
+    <dimen name="utl_marginHome">7dp</dimen>
+    <dimen name="utl_marginHomeDouble">14dp</dimen>
+    <dimen name="utl_fragment_bottom_padding">5dp</dimen>
+    <integer name="utl_durationAnim">500</integer>
+    <integer name="utl_durationAnimQuick">250</integer>
 </resources>

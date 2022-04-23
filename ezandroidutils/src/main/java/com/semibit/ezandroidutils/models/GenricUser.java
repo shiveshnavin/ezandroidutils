@@ -8,8 +8,8 @@ import androidx.annotation.Nullable;
 import com.semibit.ezandroidutils.App;
 import  com.semibit.ezandroidutils.Constants;
 import  com.semibit.ezandroidutils.R;
-import  com.semibit.ezandroidutils.services.LoginService;
 import  com.semibit.ezandroidutils.EzUtils;
+import com.semibit.ezandroidutils.ui.BaseActivity;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
@@ -146,7 +146,7 @@ public class GenricUser {
                 (!EzUtils.isEmpty(dob) || App.getInstance().getBoolean("disable_age_check")) &&
                 !EzUtils.isEmpty(email) &&
                 !EzUtils.isEmpty(name) &&
-                (!LoginService.isPasswordMandatoryForSignup() || !EzUtils.isEmpty(password)) ;
+                (!BaseActivity.isPasswordMandatoryForSignup() || !EzUtils.isEmpty(password)) ;
     }
 
     public String getImage(){

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="TextInputStyle">
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxBackgroundMode">filled</item>
+        <item name="hintTextColor">@color/utl_colorTextSecondary</item>
+        <item name="android:background">@drawable/bg_selector</item>
+        <item name="errorTextColor">@color/utl_colorTextWarning</item>
+        <item name="errorIconTint">@color/utl_colorTextWarning</item>
+        <item name="endIconMode">clear_text</item>
+        <item name="endIconTint">@color/utl_colorBackground</item>
+    </style>
+
+
+    <style name="TextEditTextStyle">
+        <item name="maxLines">1</item>
+        <item name="singleLine">true</item>
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+</resources>

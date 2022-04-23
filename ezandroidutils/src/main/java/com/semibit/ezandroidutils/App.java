@@ -23,10 +23,11 @@ import org.json.JSONArray;
 
 public class App extends Application {
 
+    public static final int VERSION_CODE = 1;
     public static FirebaseRemoteConfig mFirebaseRemoteConfig;
     public static Context mContext;
-    private static App instance;
-    private static GenricUser userModel;
+    public static App instance;
+    public static GenricUser userModel;
     public static final boolean isBotTestMode = false;
     // todo : remove email
     public static final String testEmail = "test@gmail.com";

@@ -10,6 +10,69 @@
         <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/app/src/main/res/layout/utl_toolbar.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/app/src/main/res/menu/utl_menu_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/app/src/main/res/xml/default_config.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/avd_load.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/bg_round_clip_outline_orange.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/bg_round_filled_dark.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/bg_round_filled_dark_bordered_orange.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/bg_round_filled_darklight.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/bg_round_grey_filled.xml" value="0.19074074074074074" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/bg_round_oval_outline.xml" value="0.19074074074074074" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/bg_rounded_bottom_nav.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/bg_rounded_btn_filled.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/bg_rounded_btn_filled_light.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/bg_rounded_btn_hollow.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/bg_rounded_filled_white.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/bg_rounded_filled_white_focused.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/bg_rounded_search.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/bg_selector.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/bg_selector_dark.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/bg_selector_rounded_btn_filled.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/edit.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/ic_add_a_photo_black_24dp.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/ic_add_attachment.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/ic_attachment_black_24dp.xml" value="0.25833333333333336" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/ic_cancel.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/ic_cancel_white.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/ic_done_tick.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/ic_ham.xml" value="0.19074074074074074" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/ic_insert_drive_file_black_24dp.xml" value="0.25833333333333336" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/ic_launcher_background.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/ic_message_black_24dp.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/ic_place_black_24dp.xml" value="0.25833333333333336" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/ic_plus_grey_12dp.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/messaging_rounded_green2_chat_filled.xml" value="0.19074074074074074" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/messaging_rounded_grey_chat_filled.xml" value="0.19074074074074074" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/utl_ic_logo.xml" value="0.19074074074074074" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/vd_options.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/drawable/win.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/fragment_blank.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/fragment_list.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/messaging_fragment.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/messaging_row_chat.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/messaging_row_reply_chat.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/row_style_shop.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/row_user.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/utl_date_time_picker.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/utl_diag_bottom.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/utl_diag_bottom_list.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/utl_diag_circular_reveal.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/utl_diag_content_picker.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/utl_diag_image_text.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/utl_diag_success.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/utl_diag_success_dark.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/utl_horizontal_progress.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/utl_include_search_view.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/utl_loading.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/utl_row_feed.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/utl_row_feed_style.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/utl_row_menu.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/utl_row_notification.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/utl_row_story.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/utl_row_story_style.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/layout/utl_toolbar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/ezandroidutils/src/main/res/menu/menu_drawer.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

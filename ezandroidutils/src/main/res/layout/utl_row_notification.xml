@@ -21,7 +21,7 @@
             android:layout_centerVertical="true"
             android:padding="4dp"
             android:src="@drawable/ic_notifications_black_24dp"
-            app:tint="@color/colorPrimary" />
+            app:tint="@color/utl_colorPrimary" />
 
 
         <TextView
@@ -33,7 +33,7 @@
             android:layout_toRightOf="@id/image"
             android:fontFamily="@font/font_subtext"
             android:text="@string/abc"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/utl_colorPrimary"
             android:textSize="16sp" />
 
 
@@ -49,7 +49,7 @@
         android:layout_toRightOf="@id/icon"
         android:fontFamily="@font/font_subtext"
         android:text="@string/abc"
-        android:textColor="@color/colorTextPrimary"
+        android:textColor="@color/utl_colorTextPrimary"
         android:textSize="14sp" />
 
 
@@ -61,7 +61,7 @@
         android:ellipsize="end"
         android:maxLines="1"
         android:text="@string/abc"
-        android:textColor="@color/colorTextSecondary"
+        android:textColor="@color/utl_colorTextSecondary"
         android:textSize="12sp" />
 
 
@@ -70,7 +70,7 @@
         android:layout_height="0.1dp"
         android:layout_below="@+id/cont_text"
         android:layout_marginTop="10dp"
-        android:background="@color/colorBackgroundDark" />
+        android:background="@color/utl_colorBackgroundDark" />
 
 
 </LinearLayout>

@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
-    < com.semibit.ezandroidutils.views.RoundedImageView
+    <com.semibit.ezandroidutils.views.RoundedImageView
         android:id="@+id/image"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -43,7 +43,7 @@
     <TextView
         android:visibility="gone"
         android:textColor="@color/white"
-        android:backgroundTint="@color/colorPrimaryDark3"
+        android:backgroundTint="@color/utl_colorPrimaryDark"
         android:layout_marginTop="3dp"
         android:id="@+id/subscribe"
         android:textSize="9dp"

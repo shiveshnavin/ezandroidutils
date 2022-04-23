@@ -125,7 +125,7 @@ public class MessagingFragment extends BaseFragment {
         View root = inflater.inflate(R.layout.messaging_fragment, container, false);
         findViews(root);
         setUpToolbar(root);
-        setTitle(getString(R.string.support));
+        setTitle("Support");
         groupId = "support:"+user.getEmail();
         messagingService = new MessagingService(groupId,ctx,getViewLifecycleOwner(),onNewMessages,onOldMessages,onResetSignal);
         messagingAdapter = new MessagingAdapter(messages,ctx,user,messagingService);

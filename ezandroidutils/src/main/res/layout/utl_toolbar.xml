@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    android:background="@color/colorBackground"
+    android:background="@color/utl_colorBackground"
     android:elevation="10dp"
     android:id="@+id/tool_cont"
     android:layout_width="match_parent"

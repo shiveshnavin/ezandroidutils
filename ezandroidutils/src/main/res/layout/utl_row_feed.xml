@@ -43,7 +43,7 @@
                 android:fontFamily="@font/font_text"
                 android:gravity="left"
                 android:text="@string/text"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/utl_colorAccent"
                 android:id="@+id/name"
                 android:textSize="16sp" />
 

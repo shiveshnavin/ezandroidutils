@@ -111,7 +111,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="Done"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/utl_colorPrimary"
             android:layout_weight="0.5"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"

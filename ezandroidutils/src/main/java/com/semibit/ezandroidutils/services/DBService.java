@@ -7,10 +7,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
+import com.semibit.ezandroidutils.BuildConfig;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import  com.semibit.ezandroidutils.App;
-import  com.semibit.ezandroidutils.BuildConfig;
 import  com.semibit.ezandroidutils.ui.messaging.InAppMessage;
 import  com.semibit.ezandroidutils.EzUtils;
 
@@ -24,7 +23,7 @@ public class DBService extends SQLiteOpenHelper {
     private static DBService databaseHelperInst;
 
     private DBService(Context context) {
-        super(context, DATABASE_NAME, null, BuildConfig.VERSION_CODE);
+        super(context, DATABASE_NAME, null, App.VERSION_CODE);
     }
 
     public static synchronized DBService getInstance(Context context) {

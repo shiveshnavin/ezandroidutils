@@ -1,12 +1,10 @@
 package com.semibit.ezandroidutils.ui;
 
-import android.Manifest;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Point;
@@ -15,18 +13,14 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.net.ConnectivityManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.ColorRes;
@@ -36,21 +30,17 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.appcompat.widget.PopupMenu;
 import androidx.core.app.ShareCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.androidnetworking.error.ANError;
 import  com.semibit.ezandroidutils.App;
-import  com.semibit.ezandroidutils.BuildConfig;
 import  com.semibit.ezandroidutils.Constants;
 import  com.semibit.ezandroidutils.R;
 import  com.semibit.ezandroidutils.binding.GenericUserViewModel;
-import  com.semibit.ezandroidutils.interfaces.API;
+import com.semibit.ezandroidutils.interfaces.API;
 import  com.semibit.ezandroidutils.interfaces.GenricDataCallback;
-import  com.semibit.ezandroidutils.interfaces.GenricObjectCallback;
 import  com.semibit.ezandroidutils.interfaces.NetworkRequestCallback;
 import  com.semibit.ezandroidutils.interfaces.NetworkService;
 import  com.semibit.ezandroidutils.models.ActionItem;
@@ -63,15 +53,10 @@ import  com.semibit.ezandroidutils.services.DBService;
 import  com.semibit.ezandroidutils.services.DownloadOpenService;
 import  com.semibit.ezandroidutils.services.EventBusService;
 import  com.semibit.ezandroidutils.services.InAppNavService;
-import  com.semibit.ezandroidutils.services.RestAPI;
-import  com.semibit.ezandroidutils.ui.activities.HomeActivity;
-import  com.semibit.ezandroidutils.ui.activities.SplashActivity;
-import  com.semibit.ezandroidutils.utils.FadePopup;
 import  com.semibit.ezandroidutils.utils.TextAndContentPicker;
 import  com.semibit.ezandroidutils.EzUtils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.firebase.messaging.FirebaseMessaging;
@@ -97,10 +82,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     public static String TAG = "BaseApp";
     public static String accessToken;
     public static DBService databaseHelper;
-    public static FirebaseAnalytics mfbanalytics;
     public static FirebaseRemoteConfig mFirebaseRemoteConfig;
-    public static API restApi;
     public static NetworkService netService;
+    public static API restApi;
 
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
@@ -124,6 +108,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     ProgressDialog pd;
     TextAndContentPicker picker;
     ProgressDialog hideShow;
+    public int logoInv;
+    public int infoAbout;
 
     @NonNull
     public static String getFirebaseToken(boolean ignoreExpiry) {
@@ -172,6 +158,10 @@ public abstract class BaseActivity extends AppCompatActivity {
             FirebaseCrashlytics.getInstance().recordException(e);
         }
         return EzUtils.requireNotNull(accessToken);
+    }
+
+    public static boolean isPasswordMandatoryForSignup() {
+        return false;
     }
 
     public void setUpToolbar() {
@@ -223,8 +213,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         if (databaseHelper == null)
             databaseHelper = DBService.getInstance(getApplicationContext());
-        if (mfbanalytics == null)
-            mfbanalytics = FirebaseAnalytics.getInstance(getApplicationContext());
         if (netService == null)
             netService = AndroidNetworkService.getInstance(getApplicationContext());
         if (netService != null)
@@ -232,9 +220,6 @@ public abstract class BaseActivity extends AppCompatActivity {
             accessToken = refreshApiKeyFromRemoteConfig();
             netService.setAccessToken(accessToken);
         }
-        if (restApi == null)
-            restApi = RestAPI.getInstance(getApplicationContext());
-
 
         isActivityAlive = true;
 
@@ -256,42 +241,14 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    public void startLogout() {
-        EzUtils.logout();
-        Intent intent = new Intent(getApplicationContext(), SplashActivity.class);
-        finishAffinity();
-        startActivity(intent);
-    }
+    public abstract void startLogout();
 
     public void startHome() {
         startHome(new Intent());
     }
-    public void startHome(Intent intent) {
+    public abstract void startHome(Intent intent);
 
-        Intent itt = new Intent(ctx, HomeActivity.class);
-        if(intent.hasExtra("action"))
-        itt.putExtra("action",intent.getStringExtra("action"));
-        startActivity(itt);
-        finish();
-        GenericUserViewModel.getInstance().onlyIfPresent(new GenricObjectCallback<GenricUser>() {
-            @Override
-            public void onEntity(GenricUser data) {
-                FirebaseCrashlytics.getInstance().setUserId(data.getId());
-            }
-        });
-
-//
-//        user = EzUtils.readUserData();
-//        user = EzUtils.readUserData();
-//
-//
-//        if (processDeepLink() == null) {
-//            startActivity(new Intent(ctx, HomeActivity.class));
-//            finishAffinity();
-//        }
-    }
-
-    ActionItem processDeepLink() {
+    public ActionItem processDeepLink() {
         Intent intent = getIntent();
         Uri data = intent.getData();
         EzUtils.e("DeepLink", "Checking Data" + data);
@@ -311,7 +268,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         return item;
     }
 
-    private void updateUser(JSONObject jop) {
+    public void updateUser(JSONObject jop) {
 
     }
 
@@ -414,7 +371,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
-    private AnimationDrawable getProgressBarAnimation() {
+    public AnimationDrawable getProgressBarAnimation() {
 
         GradientDrawable rainbow1 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT,
                 new int[]{Color.RED, Color.MAGENTA, Color.BLUE, Color.CYAN, Color.GREEN, Color.YELLOW});
@@ -487,96 +444,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
-
-    public void showDrawer() {
-
-
-        View navIcon = toolbar.getChildAt(1);
-
-        FadePopup popup = new FadePopup(this, navIcon, null);
-
-        popup.popup();
-        LinearLayout cont = popup.getContainer();
-
-        PopupMenu p = new PopupMenu(this, null);
-        Menu menu = p.getMenu();
-        getMenuInflater().inflate(R.menu.menu_drawer, menu);
-
-        int pad = EzUtils.pxFromDp(ctx, 30).intValue();
-        cont.setPadding(pad, pad, pad, pad);
-
-
-        int i = 0;
-        while (i < menu.size()) {
-            MenuItem mi = menu.getItem(i++);
-
-            final View row = getLayoutInflater().inflate(R.layout.utl_row_menu, null);
-            final TextView tv = row.findViewById(R.id.txt);
-            tv.setId(R.id.txt + 100);
-            ImageView im = row.findViewById(R.id.img);
-            row.setId(mi.getItemId());
-            row.setTag(mi.getTitle());
-            tv.setTextSize(24);
-
-
-            tv.setText(mi.getTitle());
-            im.setImageDrawable(mi.getIcon());
-
-            row.setOnClickListener((v) -> {
-
-                EzUtils.e("ID ", v.getId() + " tag " + v.getTag());
-                Intent mIntent = null;
-                switch (v.getId()) {
-                    case R.id.menu_home:
-
-                        mIntent = new Intent(ctx, HomeActivity.class);
-                        finishAffinity();
-
-                        break;
-                    case R.id.notifications:
-
-
-//                        showNotifications();
-                        // mIntent = new Intent(ctx,CartActivity.class);
-
-                        break;
-                    case R.id.menu_account:
-
-                        inAppNavService.starMyAccount();
-                        // mIntent = new Intent(ctx,MyAccount.class);
-
-                        break;
-                    case R.id.menu_about:
-
-                        showAbout();
-
-                        // mIntent = new Intent(ctx,AboutUs.class);
-
-                        break;
-                    case R.id.menu_logout:
-
-                        startLogout();
-                        break;
-
-                }
-
-                if (mIntent != null)
-                    startActivity(mIntent);
-                popup.dismiss();
-
-
-            });
-
-            cont.setOrientation(LinearLayout.VERTICAL);
-            cont.setGravity(Gravity.CENTER);
-
-            cont.addView(row);
-
-        }
-
-
-    }
-
     public void showAbout() {
 
         String text = getstring(R.string.about);
@@ -586,7 +453,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 //        EzUtils.e("usage",text2);
 //        EzUtils.e("usage","--------------------");
 
-        lastDialog = EzUtils.diagInfo2(ctx, text, "Feedback", R.drawable.logo_inv, new EzUtils.ClickCallBack() {
+        lastDialog = EzUtils.diagInfo2(ctx, text, "Feedback", logoInv, new EzUtils.ClickCallBack() {
             @Override
             public void done(DialogInterface dialogInterface) {
 
@@ -616,7 +483,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
             EzUtils.setKey(help_key, "dontshow", ctx);
             if (text.length() > 3) {
-                lastDialog = EzUtils.diagInfo2(ctx, text, "Don't Show Again", R.drawable.logo_inv, new EzUtils.ClickCallBack() {
+                lastDialog = EzUtils.diagInfo2(ctx, text, "Don't Show Again",logoInv, new EzUtils.ClickCallBack() {
                     @Override
                     public void done(DialogInterface dialogInterface) {
 
@@ -665,7 +532,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public void resourceNotAvailable() {
         lastDialog = EzUtils.diagInfo2(ctx, getString(R.string.resc_not_available_dialog),
-                "Dismiss", R.drawable.ic_info_about_48dp, new EzUtils.ClickCallBack() {
+                "Dismiss", infoAbout, new EzUtils.ClickCallBack() {
                     @Override
                     public void done(DialogInterface dialogInterface) {
 
@@ -856,70 +723,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
 
-    public void checkUpdate() {
-
-        DownloadOpenService downloadOpenService = new DownloadOpenService();
-        if (ContextCompat.checkSelfPermission(ctx, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-            }
-        }
-        int versionCode = BuildConfig.VERSION_CODE;
-        /*
-        {
-            "versionCode":1,
-            "message":"Latest update!",
-            "url":"http://download.com/app/apk.apk",
-            "mandatory":true
-        }
-         */
-        try {
-            RestAPI.getInstance().checkUpdate(versionCode, new GenricObjectCallback<JSONObject>() {
-                @Override
-                public void onEntity(JSONObject response) {
-                    int codeUpdated = response.optInt("versionCode", versionCode);
-                    if(response.optBoolean("lock",false)){
-                        EzUtils.toast(ctx, "Application is temporarily unavailable.");
-                        finish();
-                    }
-                    if (codeUpdated > versionCode) {
-                        Dialog d = EzUtils.diagInfo2(ctx, response.optString("message"),
-                                "Update", R.drawable.ic_logo,
-                                new EzUtils.ClickCallBack() {
-                                    @Override
-                                    public void done(DialogInterface dialogInterface) {
-                                        try {
-
-                                            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(response.optString("url")));
-                                            startActivity(browserIntent);
-
-    //                                        if (ContextCompat.checkSelfPermission(ctx, Manifest.permission.REQUEST_INSTALL_PACKAGES) == PackageManager.PERMISSION_DENIED) {
-    //                                            downloadOpenService.downloadFile(act, response.optString("url"), getString(R.string.app_name) + ".apk");
-    //
-    //                                        } else {
-    //
-    //                                            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(response.optString("url")));
-    //                                            startActivity(browserIntent);
-    //                                        }
-                                        } catch (Exception e) {
-                                            e.printStackTrace();
-                                        }
-                                    }
-                                });
-                        d.setCancelable(!response.optBoolean("mandatory", false));
-                    }
-                }
-
-                @Override
-                public void onError(String message) {
-
-                }
-            });
-        } catch (Exception e) {
-            CrashReporter.reportException(e);
-        }
-
-    }
+    public abstract void checkUpdate() ;
 
     public Point size;
 
@@ -944,5 +748,10 @@ public abstract class BaseActivity extends AppCompatActivity {
             return (int)(originalSize / 1.5);
         return originalSize;
     }
+
+    public static void refreshProviderToken(GenricDataCallback cb){
+
+    }
+
 
 }

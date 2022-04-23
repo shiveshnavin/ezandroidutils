@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundDark">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <WebView
+        android:id="@+id/web"
+        style="@style/MyWebView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/loader">
+
+
+    </WebView>
+
+
+    <com.yoloplay.app.utils.GradientLoader
+        android:id="@+id/loader"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@+id/tool_cont"
+        android:alpha="0"
+        app:animationDuration="400"
+        app:gradientEndColor="@color/colorPrimary"
+        app:gradientStartColor="@color/colorBackgroundDark">
+
+    </com.yoloplay.app.utils.GradientLoader>
+
+    <include
+        android:id="@+id/tool_cont"
+        layout="@layout/utl_toolbar" />
+</RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/cont_load_block"
+        android:visibility="gone"
+        android:background="@color/transblack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:id="@+id/animLogo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/avd_load"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

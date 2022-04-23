@@ -30,7 +30,7 @@
                 android:orientation="horizontal">
 
 
-                < com.semibit.ezandroidutils.views.RoundedImageView
+                <com.semibit.ezandroidutils.views.RoundedImageView
                     android:layout_marginTop="1dp"
                     android:layout_gravity="center_vertical"
                     android:id="@+id/disease_thumb"
@@ -39,7 +39,7 @@
                     android:layout_height="24dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="6dp"
-                    android:src="@drawable/logo" />
+                    android:src="@drawable/utl_logo_inv" />
 
                 <LinearLayout
                     android:orientation="vertical"

@@ -167,7 +167,7 @@ public class TextAndContentPicker {
                                 });
                                 break;
                             case 1:
-                                EzUtils.setImageTint(img, true, R.color.colorPrimary);
+                                EzUtils.setImageTint(img, true, R.color.utl_colorPrimary);
                                 vh.base.setOnClickListener((v) -> {
                                     callFilePicker(it);
                                 });
