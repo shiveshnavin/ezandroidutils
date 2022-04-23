@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/app/src/main/res/drawable/ic_add_attachment.xml" value="0.21388888888888888" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/app/src/main/res/drawable/ic_cancel_white.xml" value="0.21388888888888888" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/app/src/main/res/drawable/ic_notifications_black_48dp.xml" value="0.21388888888888888" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/app/src/main/res/drawable/ic_users.xml" value="0.21388888888888888" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/app/src/main/res/layout/utl_toolbar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/app/src/main/res/menu/utl_menu_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/StudioProjects/EzAndroidUtils/app/src/main/res/xml/default_config.xml" value="0.13020833333333334" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
