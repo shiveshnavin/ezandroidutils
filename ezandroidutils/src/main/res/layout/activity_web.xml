@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackgroundDark">
+    android:background="@color/utl_colorBackgroundDark">
 
 <RelativeLayout
     android:layout_width="match_parent"
@@ -20,17 +20,17 @@
     </WebView>
 
 
-    <com.yoloplay.app.utils.GradientLoader
+    <com.semibit.ezandroidutils.utils.GradientLoader
         android:id="@+id/loader"
         android:layout_width="match_parent"
         android:layout_height="5dp"
         android:layout_below="@+id/tool_cont"
         android:alpha="0"
         app:animationDuration="400"
-        app:gradientEndColor="@color/colorPrimary"
-        app:gradientStartColor="@color/colorBackgroundDark">
+        app:gradientEndColor="@color/utl_colorPrimary"
+        app:gradientStartColor="@color/utl_colorBackgroundDark">
 
-    </com.yoloplay.app.utils.GradientLoader>
+    </com.semibit.ezandroidutils.utils.GradientLoader>
 
     <include
         android:id="@+id/tool_cont"
