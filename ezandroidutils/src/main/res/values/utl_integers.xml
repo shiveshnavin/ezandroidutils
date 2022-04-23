@@ -12,6 +12,8 @@
 
 
     <integer name="tr_dur">100</integer>
+    <integer name="durationAnim">500</integer>
+    <integer name="durationAnimQuick">250</integer>
 
 
 </resources>
