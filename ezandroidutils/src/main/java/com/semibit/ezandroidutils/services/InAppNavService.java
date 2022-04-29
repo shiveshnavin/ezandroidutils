@@ -17,15 +17,15 @@ import com.semibit.ezandroidutils.ui.messaging.MessagingFragment;
 
 public class InAppNavService {
 
-    private BaseActivity ctx;
-    private FragmentManager fragmentManager;
+    public BaseActivity ctx;
+    public FragmentManager fragmentManager;
 
     public InAppNavService(BaseActivity ctx) {
         this.ctx = ctx;
         fragmentManager = ctx.fragmentManager;
     }
 
-    private void startActivity(Intent it) {
+    public void startActivity(Intent it) {
         ctx.startActivity(it);
     }
 
