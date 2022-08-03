@@ -3,17 +3,35 @@
 
 ## Usage
 1. Place in root `build.gradle`
-```
+```gradle
 allprojects {
 		repositories {
 			maven { url 'https://jitpack.io' }
 		}
 	}
 ```
-2. In app's `build.gradle`
+2. Update gradle files
 
-```
-implementation 'com.github.shiveshnavin:ezandroidutils:1.2.0'
+root `build.gradle`
+```gradle
+dependencies {
+	 classpath 'com.google.gms:google-services:4.3.10'
+	 ...
+}
+ ```
+ 
+ 
+`app/build.gradle`
+```gradle
+dependencies {
+	implementation 'com.github.shiveshnavin:ezandroidutils:1.2.0'
+	...
+}
+
+// Place at the bottom of file
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
 ```
 3. Register on firebase and place `google-services.json` in app module
 4. Extend `com.semibit.ezandroidutils.App` 
@@ -43,6 +61,6 @@ Build was configured to prefer settings repositories over project repositories b
 ``` 
 
 Undo Step 1 and Try addming the below config in `settings.gradle`
-```
+```gradle
 maven { url 'https://jitpack.io' }
 ```
