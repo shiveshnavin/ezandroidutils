@@ -13,7 +13,7 @@ allprojects {
 2. In app's `build.gradle`
 
 ```
-implementation 'com.github.shiveshnavin:ezandroidutils:1.1.0b'
+implementation 'com.github.shiveshnavin:ezandroidutils:1.2.0'
 ```
 3. Register on firebase and place `google-services.json` in app module
 4. Extend `com.semibit.ezandroidutils.App` 
