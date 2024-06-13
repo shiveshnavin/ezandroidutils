@@ -10,6 +10,25 @@ allprojects {
 		}
 	}
 ```
+For gradle kts, in `settings.gradle.kts`
+```
+pluginManagement {
+    repositories {
+	//...
+        jcenter()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+    	//...
+        maven(url = "https://jitpack.io")
+        jcenter()
+    }
+}
+```
+
 2. Update gradle files
 
 root `build.gradle`
