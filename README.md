@@ -84,3 +84,14 @@ Undo Step 1 and Try addming the below config in `settings.gradle`
 ```gradle
 maven { url 'https://jitpack.io' }
 ```
+
+Gradle KTS
+```
+
+    implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
+    implementation("com.github.shiveshnavin:ezandroidutils:1.2.0") {
+        exclude(group = "com.google.firebase", module = "firebase-crashlytics")
+    }
+    implementation("com.google.firebase:firebase-crashlytics-ktx")
+    implementation("com.google.firebase:firebase-analytics-ktx")
+```
